@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 18:36:25 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/03 18:36:26 by cortiz-s         ###   ########.fr       */
+/*   Created: 2022/05/01 10:24:23 by cortiz-s          #+#    #+#             */
+/*   Updated: 2022/05/01 10:24:31 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*tmp1;
+	unsigned char	*tmp2;
 
-	i = 0;
-	while (i < n)
+	if (n == 0)
+		return (0);
+	tmp1 = (unsigned char *)s1;
+	tmp2 = (unsigned char *)s2;
+	while (--n && *tmp1 == *tmp2 && *tmp1 && *tmp2)
 	{
-		if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
-		i++;
+		tmp1++;
+		tmp2++;
 	}
-	return (0);
+	return (*tmp1 - *tmp2);
 }
 /*
 #include <stdio.h>

@@ -5,20 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 18:37:23 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/03 18:37:24 by cortiz-s         ###   ########.fr       */
+/*   Created: 2022/05/01 10:27:54 by cortiz-s          #+#    #+#             */
+/*   Updated: 2022/05/01 10:28:03 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c){
-	if (c>= 'a' && c<='z')
-	       return( c - 32);
+int	ft_toupper(int c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
 	else
-		return(c);
+		return (c);
 }
 /*
-#include<stdio.h>
-int main(void){
+#include <stdio.h>
+int	main(void){
 	int x = 'r';
 	printf("Caracter inicial %i\n", x);
 

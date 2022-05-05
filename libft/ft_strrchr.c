@@ -5,26 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 18:36:59 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/04 20:12:33 by cortiz-s         ###   ########.fr       */
+/*   Created: 2022/05/01 08:42:44 by cortiz-s          #+#    #+#             */
+/*   Updated: 2022/05/01 10:21:33 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	int		f;
-	char	*exit;
+	int		len;
+	char	*tmp;
 
-	f = ft_strlen(s) - 1;
-	exit = (char *)s;
-	if (exit[f] == (char)c)
-			return (exit + f);
-	while (exit[f])
+	tmp = (char *)s;
+	len = ft_strlen(s);
+	if (*(tmp + len) == (char)c)
+		return (tmp + len);
+	while (len--)
 	{
-		if (exit[f] == (char)c)
-			return (exit + f);
-		f--;
+		if (*(tmp + len) == (char)c)
+			return (tmp + len);
 	}
 	return (NULL);
 }
@@ -37,7 +37,7 @@ char	*ft_strrchr(const char *s, int c)
 			return (tmp + len);
 		while (len--){
 			if (*(tmp + len) == (char)c)
-			     	return (tmp + len);
+				  	return (tmp + len);
 		}
 		return (NULL);
 
