@@ -6,7 +6,7 @@
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:51:44 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/04 18:45:52 by cortiz-s         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:36:47 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -35,3 +35,4 @@ int	main(void)
 	printf("Cadena 1 %s, Cadena 2 %s, Res: %i", p1, p2, ft_memcmp(p1, p2, 8));
 	return (0);
 }
+*/
