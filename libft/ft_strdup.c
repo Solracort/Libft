@@ -6,7 +6,7 @@
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:13:31 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/05 16:32:49 by cortiz-s         ###   ########.fr       */
+/*   Updated: 2022/05/05 18:36:44 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 char	*ft_strdup(const char *s1)
 {
-	char *s2;
+	char	*s2;
 
-	if (!(s2 = (char *)malloc(ft_strlen(s1) + 1)))
+	s2 = (char *)malloc(ft_strlen(s1) + 1);
+	if (!s2)
 		return (0);
 	ft_memcpy(s2, s1, ft_strlen(s1) + 1);
 	return (s2);
