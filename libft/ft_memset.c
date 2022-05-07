@@ -6,25 +6,25 @@
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 18:34:58 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/03 18:35:02 by cortiz-s         ###   ########.fr       */
+/*   Updated: 2022/05/06 18:34:00 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*pointer;
 	size_t	i;
 
-	i= 0;
-	
+	i = 0;
 	pointer = (char *)s;
 	while (i < n)
 	{
 		pointer[i] = (char)c;
 		i++;
 	}
-	return(pointer);
+	return (pointer);
 }
 /*
 #include <stdio.h>

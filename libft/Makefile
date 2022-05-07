@@ -1,4 +1,15 @@
-NAME = libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/05/07 09:04:25 by cortiz-s          #+#    #+#              #
+#    Updated: 2022/05/07 09:04:28 by cortiz-s         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRCS = ft_isalpha.c ft_atoi.c ft_isalnum.c ft_isascii.c ft_isdigit.c \
 	   ft_isprint.c ft_memset.c ft_strlen.c ft_strlcat.c ft_strlcpy.c \
 	   ft_strncmp.c ft_strnstr.c ft_strchr.c ft_strrchr.c ft_tolower.c \
@@ -7,12 +18,13 @@ SRCS = ft_isalpha.c ft_atoi.c ft_isalnum.c ft_isascii.c ft_isdigit.c \
 OBJS = ${SRCS:.c=.o}
 FLAGS = -Wall -Wextra -Werror
 CC = cc
-AR = ar rcs
+AR = ar -rc
 RM = rm -f
+NAME = libft.a
 
-.c.o: ${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+.c.o: ${CC} ${FLAGS} -g -c $< -o ${<:.c=.o}
 
-${NAME}:${OBJS} 
+$(NAME): ${OBJS} 
 	${AR} ${NAME} ${OBJS} 
 	
 all: ${NAME}

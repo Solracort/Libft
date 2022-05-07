@@ -6,7 +6,7 @@
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:24:47 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/05 15:52:29 by cortiz-s         ###   ########.fr       */
+/*   Updated: 2022/05/07 09:11:55 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_bzero(void *s, size_t n)
 	{
 		i = 0;
 		pointer = (char *)s;
-		while (i < n && *pointer)
+		while (i < n && pointer)
 		{
 			*pointer = 0;
 			i++;

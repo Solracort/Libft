@@ -6,7 +6,7 @@
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:26:42 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/06 17:53:21 by cortiz-s         ###   ########.fr       */
+/*   Updated: 2022/05/06 18:22:50 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (ft_strlen(s) <= start)
 		return (ft_strdup(""));
 	cad = malloc(comp_len(s, len) + 1);
+	if (!cad)
+		return (0);
 	i = 0;
 	while (i < len && s[start] != '\0')
 	{
