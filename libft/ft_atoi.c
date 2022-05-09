@@ -6,7 +6,7 @@
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 11:59:04 by marvin            #+#    #+#             */
-/*   Updated: 2022/05/04 16:47:44 by cortiz-s         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:12:47 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_atoi(const char *str)
 
 	sign = 1;
 	nb = 0;
-	while (*str >= 9 && *str <= 13 || *str == 32)
+	while ((*str >= 9 && *str <= 13) || *str == 32)
 		str++;
 	if (*str == '-' || *str == '+')
 	{

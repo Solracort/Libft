@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 15:39:34 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/09 16:28:18 by cortiz-s         ###   ########.fr       */
+/*   Created: 2022/05/09 16:55:35 by cortiz-s          #+#    #+#             */
+/*   Updated: 2022/05/09 16:55:36 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	srclen;
+	unsigned int	i;
+	char			*str;
 
-	srclen = ft_strlen(src);
-	if (srclen + 1 < dstsize)
-		ft_memcpy(dst, src, srclen + 1);
-	else if (dstsize != 0)
+	if (s == NULL || f == NULL)
+		return (NULL);
+	i = 0;
+	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	while (s[i] != '\0')
 	{
-		ft_memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	return (srclen);
+	str[i] = '\0';
+	return (str);
 }

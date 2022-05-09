@@ -6,7 +6,7 @@
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 08:28:18 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/01 10:20:26 by cortiz-s         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:13:20 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	const char	*tmp;
-
 	while (*s)
 	{
 		if (*s == (char)c)

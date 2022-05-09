@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 15:39:34 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/09 16:28:18 by cortiz-s         ###   ########.fr       */
+/*   Created: 2022/05/09 17:14:30 by cortiz-s          #+#    #+#             */
+/*   Updated: 2022/05/09 17:14:31 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	size_t	srclen;
+	t_list	*aux;
 
-	srclen = ft_strlen(src);
-	if (srclen + 1 < dstsize)
-		ft_memcpy(dst, src, srclen + 1);
-	else if (dstsize != 0)
+	if (!*lst)
+		return ;
+	while (*lst)
 	{
-		ft_memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
+		aux = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = aux;
 	}
-	return (srclen);
+	*lst = 0;
 }

@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 15:39:34 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/09 16:28:18 by cortiz-s         ###   ########.fr       */
+/*   Created: 2022/05/09 17:14:09 by cortiz-s          #+#    #+#             */
+/*   Updated: 2022/05/09 17:14:10 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t	srclen;
+	t_list	*temp;
 
-	srclen = ft_strlen(src);
-	if (srclen + 1 < dstsize)
-		ft_memcpy(dst, src, srclen + 1);
-	else if (dstsize != 0)
+	if (!lst || !new)
+		return ;
+	temp = *lst;
+	if (*lst != NULL)
 	{
-		ft_memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = '\0';
+		while (temp->next != NULL)
+		{
+			temp = temp->next;
+		}
+		temp->next = new;
 	}
-	return (srclen);
+	else
+		*lst = new;
 }

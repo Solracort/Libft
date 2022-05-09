@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cortiz-s <cortiz-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 15:24:47 by cortiz-s          #+#    #+#             */
-/*   Updated: 2022/05/07 09:11:55 by cortiz-s         ###   ########.fr       */
+/*   Created: 2022/05/09 15:37:14 by cortiz-s          #+#    #+#             */
+/*   Updated: 2022/05/09 15:37:15 by cortiz-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,11 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char	*pointer;
 
-	if (n != 0)
+	i = 0;
+	while (i < n)
 	{
-		i = 0;
-		pointer = (char *)s;
-		while (i < n && pointer)
-		{
-			*pointer = 0;
-			i++;
-			pointer++;
-		}
+		((char *)s)[i] = 0;
+		i++;
 	}
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	p1[];
-
-	p1[] = "123ABC";
-	printf("El puntero %s el ft_bzero lo transf en: ", p1);
-    ft_bzero(p1, 6);
-    printf("%s\n", p1);
-	return (0);
-}
-*/
